@@ -16,5 +16,20 @@ const filter = function(filterer, collection) {
   return filteredCollection;
 };
 
+const reduce = function(reducer, collection, initializer){
+  let result = collection[0];
+  let currentIndex = 1;
+  if(initializer != undefined){
+    result = initializer;
+    currentIndex = 0;
+  }
+  while(currentIndex < collection.length){
+    result = reducer(result, collection[currentIndex]);
+    currentIndex++;
+  }
+  return result;
+};
+
 exports.map = map;
 exports.filter = filter;
+exports.reduce = reduce;
