@@ -6,4 +6,15 @@ const map = function(mapper, collection) {
   return mappedCollection;
 };
 
+const filter = function(filterer, collection) {
+  let filteredCollection = [];
+  for(element of collection) {
+    if(filterer(element)) {
+      filteredCollection.push(element);
+    }
+  }
+  return filteredCollection;
+};
+
 exports.map = map;
+exports.filter = filter;
