@@ -1,4 +1,4 @@
-const assert = require('assert');
+const {deepEqual} = require('assert');
 const {map} = require('../src/library');
 
 const square = function(number) {
@@ -6,7 +6,7 @@ const square = function(number) {
 };
 
 const testMap = function(mapper, input, output) {
-  assert.deepEqual(map(mapper, input), output);
+  deepEqual(map(mapper, input), output);
 };
 
 testMap(square, [1], [1]);

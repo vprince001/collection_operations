@@ -1,4 +1,4 @@
-const assert = require('assert');
+const {deepEqual} = require('assert');
 const {filter} = require('../src/library');
 
 const isEven = function(number) {
@@ -6,7 +6,7 @@ const isEven = function(number) {
 };
 
 const testFilter = function(filterer, input, output) {
-  assert.deepEqual(filter(filterer, input), output);
+  deepEqual(filter(filterer, input), output);
 };
 
 testFilter(isEven, [2], [2]);

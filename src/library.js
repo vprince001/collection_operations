@@ -18,15 +18,17 @@ const filter = function(filterer, collection) {
 
 const reduce = function(reducer, collection, initializer){
   let result = collection[0];
-  let currentIndex = 1;
-  if(initializer != undefined){
+  let startingIndex = 1;
+
+  if(initializer) {
     result = initializer;
-    currentIndex = 0;
+    startingIndex = 0;
   }
-  while(currentIndex < collection.length){
-    result = reducer(result, collection[currentIndex]);
-    currentIndex++;
+
+  for(let index = startingIndex; index < collection.length; index++) {
+    result = reducer(result, collection[index]);
   }
+
   return result;
 };
 
