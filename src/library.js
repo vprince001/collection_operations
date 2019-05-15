@@ -32,6 +32,10 @@ const reduce = function(reducer, collection, initializer){
   return result;
 };
 
+const mapPrime = function(mapper, collection) {
+  let result = [];
+}
+
 exports.map = map;
 exports.filter = filter;
 exports.reduce = reduce;
